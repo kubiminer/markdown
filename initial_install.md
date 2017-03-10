@@ -47,6 +47,7 @@ sudo ufw allow ssh
 sudo ufw allow http
 sudo ufw allow https
 sudo ufw allow 8388
+sudo ufw allow [your_ssh_port_number]
 
 sudo ufw enable
 sudo ufw status
