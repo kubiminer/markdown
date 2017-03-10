@@ -1,34 +1,7 @@
-# basic setups for ubuntu vps
-https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
-
-## ssh to vps
-```linux
-ssh root@192.243.113.243 -p 26972
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-in-ubuntu-16-04
+https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lemp-on-ubuntu-16-04
+## Step 1: Install the Nginx Web Server
 ```
-## create a new user
-```linux
-# adduser karibu
-# usermod -aG sudo karibu
-```
-
-### shadowsocks ssh
-```
-#!/bin/sh
-
-#install pip and shadowsocks
-sudo apt-get install -y python-pip
-sudo pip install shadowsocks
-
-#create shadowsocks scripts
-echo "sudo ssserver -p 8388 -k [PASSWORD] -m aes-256-cfb --user nobody -d start" > ssstart.sh
-echo "sudo ssserver -d stop" > ssstop.sh
-
-#Permission
-sudo chmod +x ssstart.sh ssstop.sh
-
-#Open 8388 port
-sudo ufw allow 8388
-
-#start shadowsocks
-./ssstart.sh
+sudo apt-get update
+sudo apt-get install nginx
 ```
