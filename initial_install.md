@@ -40,3 +40,14 @@ sudo pip install shadowsocks
 If you want shadowsocks server to automatically start on system boot, then edit /etc/rc.local file `sudo nano /etc/rc.local`
 Add the following line to the file above exit 0 line
 `/usr/bin/python /usr/local/bin/ssserver -c /etc/shadowsocks.json -d start`
+
+## ufw setting
+```
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw allow 8388
+
+sudo ufw enable
+sudo ufw status
+```
